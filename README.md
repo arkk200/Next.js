@@ -1,38 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **1.0 라이브러리 vs 프레임워크**
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+**라이브러리(React.js 등)** 는 내가 직접 그 라이브러리를 불러와서 사용해야한다.<br>
+그러나 **프레임워크(Next.js 등)** 는 내가 정해진 위치에 코드만 적으면 된다.(라이브러리와 다르게 규칙이 존재한다.)<br><br>
+때문에 라이브러리는 프레임워크에 비해 자유도가 떨어진다.<br><br>
+한 예로 Next.js 같은 프레임워크의 경우, React.js 라이브러리에 있는 **ReactDOM.render()** 같은 세부적인 것들이 숨겨져있다.<br>
+또한 Next.js는 page폴더에 컴포넌트 파일이름 라우터 경로가 된다는 규칙을 따른다.<br>
+```js
+// about.js 파일
+export default function QWERTY() {
+    return 'about us';
+}
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+위코드에 컴포넌트 이름이 어떻든 파일이름이 about이라면 /about 라우터 경로에 컴포넌트를 보여준다.
