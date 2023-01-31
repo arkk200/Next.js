@@ -90,3 +90,12 @@ Next.js에서 사람들이 가장 많이 사용하는 패턴은 Layout 컴포넌
 이렇게 쓰는 이유는, _app.tsx에선 컴포넌트보단 그 외에 다양한 것(스크립트 분석 등등...)을 집중할 수 있게 하기 위해 이런 패턴을 쓴다.
 
 \+ 만약 웹페이지 title같은 html에서 head태그 내에서 할 수 있는 것들을 하고 싶다면 "next/head" 에 Head 컴포넌트를 사용하면 된다.
+
+# **6. next.config.js**
+next.config.js에선 redirect나 rewrites같은 설정을 할 수가 있다.
+
+redirect는 어떤 url로 갔을 때 다른 url로 이동시켜주는 것이고,<br>
+rewrite는 어떤 url로 갔을 때 다른 url로 이동시켜주는데 주소는 바뀌지 않으면서 이동시켜주는 것이다.
+
+여기서 rewrite를 활용하면 API 키를 브라우저 개발자도구에 source창에서 숨길 수 있다.<br>
+(next.config.js를 보면 알 수 있음)
