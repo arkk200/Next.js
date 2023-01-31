@@ -1,12 +1,21 @@
 import Seo from "@/components/Seo";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Home({ results }: { results: [] }) {
+  
+  const router = useRouter();
+  const onClick = (id: number, title: string) => {
+
+    // router.push로 Link를 대신할 수 있다.
+    router.push(`/movies/${title}/${id}`);
+  }
 
   return (
     <div className="container">
       <Seo title="Home" />
       {results?.map((movie: { id: number, poster_path: string, original_title: string }) => (
-        <div className="movie" key={movie.id}>
+        <div onClick={() => onClick(movie.id, movie.original_title)} className="movie" key={movie.id}>
           <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.original_title} />
           <h4>{movie.original_title}</h4>
         </div>

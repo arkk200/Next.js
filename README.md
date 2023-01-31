@@ -130,3 +130,11 @@ pages폴더에 movies폴더를 만들고 파일 명이 [id] 인 컴포넌트 파
 
 그리고 "/movies/*" url로 갔을 때 "next/router" 모듈에 useRouter 함수의 반환값을 출력해보면 객체가 하나 나오는데<br>
 그 객체에 query 속성에 파일명 대괄호 안에 있는 이름(여기선 id)으로 값이 할당되는 것을 볼 수 있다.
+
+\+ useRouter()로 반환된 객체에 push() 메서드가 있는데 push() 메서드는 redirect 시켜주는 메서드이다.<br>
+두번째 인자로 url을 덮어써서 rewrite해줄 수도 있다.
+
+# **8. [id] vs [...id]**
+
+파일명이 [...id]인 컴포넌트는 router.query에 id값이 배열 형태로 온다.<br>
+자세한건 /movies/[...params].tsx 파일과 index.tsx 파일을 살펴보면 된다.
