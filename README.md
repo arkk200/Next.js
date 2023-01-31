@@ -120,3 +120,13 @@ export async function getServerSideProps(){
 위처럼 return문을 쓰면 된다.<br>
 이렇게 하면 Loading...을 표시해줄 필요도 없고, state를 쓸 필요도 없다.<br>
 프론트에서 렌더링될 때 데이터를 받는게 아니고 서버에서 미리 데이터를 받는 것이기 때문이다.
+
+# **8. Dynamic Routes**
+
+Dynamic Routes는 url을 변수처럼 쓰고 싶을 때 사용한다.
+만약 특정 id의 영화의 디테일 페이지를 만들고 싶고,<br>
+url을 "/movies/1", "/movies/2", 이런식으로 하고 싶다면<br>
+pages폴더에 movies폴더를 만들고 파일 명이 [id] 인 컴포넌트 파일을 만들어주면 된다.
+
+그리고 "/movies/*" url로 갔을 때 "next/router" 모듈에 useRouter 함수의 반환값을 출력해보면 객체가 하나 나오는데<br>
+그 객체에 query 속성에 파일명 대괄호 안에 있는 이름(여기선 id)으로 값이 할당되는 것을 볼 수 있다.
