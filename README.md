@@ -89,7 +89,8 @@ Styled JSX에 글로벌 속성을 적용하려면 style 태그 안에 global을 
 Next.js에서 사람들이 가장 많이 사용하는 패턴은 Layout 컴포넌트를 따로 만들고 거기에 글로벌하게 쓸 컴포넌트를 쓰는 것이다.<br>
 이렇게 쓰는 이유는, _app.tsx에선 컴포넌트보단 그 외에 다양한 것(스크립트 분석 등등...)을 집중할 수 있게 하기 위해 이런 패턴을 쓴다.
 
-\+ 만약 웹페이지 title같은 html에서 head태그 내에서 할 수 있는 것들을 하고 싶다면 "next/head" 에 Head 컴포넌트를 사용하면 된다.
+## **Head 컴포넌트**
+만약 웹페이지 title같은 html에서 head태그 내에서 할 수 있는 것들을 하고 싶다면 "next/head" 에 Head 컴포넌트를 사용하면 된다.
 
 # **6. next.config.js**
 next.config.js에선 redirect나 rewrites같은 설정을 할 수가 있다.
@@ -131,12 +132,18 @@ pages폴더에 movies폴더를 만들고 파일 명이 [id] 인 컴포넌트 파
 그리고 "/movies/*" url로 갔을 때 "next/router" 모듈에 useRouter 함수의 반환값을 출력해보면 객체가 하나 나오는데<br>
 그 객체에 query 속성에 파일명 대괄호 안에 있는 이름(여기선 id)으로 값이 할당되는 것을 볼 수 있다.
 
-\+ useRouter()로 반환된 객체에 push() 메서드가 있는데 push() 메서드는 redirect 시켜주는 메서드이다.<br>
-두번째 인자로 url을 덮어써서 rewrite해줄 수도 있다.
+## **useRouter().push()**
+useRouter()로 반환된 객체에 push()라는 메서드가 있는데 push() 메서드는 redirect 시켜주는 메서드이다.<br>
+
+첫번째 인자로 객체가 오고
+두번째 인자로 사용자에게 보여줄 url이 온다.<br>
+
+redirect만 시키고 싶다면 첫번재 인자에 redirect할 경로만 적어주면 된다.
 
 # **8. [id] vs [...id]**
 
 파일명이 [...id]인 컴포넌트는 router.query에 id값이 배열 형태로 온다.<br>
 자세한건 /movies/[...params].tsx 파일과 index.tsx 파일을 살펴보면 된다.
 
-\+ 커스텀 404 페이지를 만들려면 pages폴더에 404라는 파일 이름의 컴포넌트 파일을 만들면 된다.
+## **404 페이지**
+커스텀 404 페이지를 만들려면 pages폴더에 404라는 파일 이름의 컴포넌트 파일을 만들면 된다.
