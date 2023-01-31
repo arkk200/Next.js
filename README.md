@@ -98,4 +98,25 @@ redirect는 어떤 url로 갔을 때 다른 url로 이동시켜주는 것이고,
 rewrite는 어떤 url로 갔을 때 다른 url로 이동시켜주는데 주소는 바뀌지 않으면서 이동시켜주는 것이다.
 
 여기서 rewrite를 활용하면 API 키를 브라우저 개발자도구에 source창에서 숨길 수 있다.<br>
-(next.config.js를 보면 알 수 있음)
+(next.config.js 파일을 보면 알 수 있음)
+
+# **7. Data받고 렌더링하기**
+
+```js
+export async function getServerSideProps() {}
+```
+를 사용하면 되는데 이때 API를 패치하는 구문을 이 함수 안에 쓰면 된다.
+
+패치해서 나온 데이터를 props로써 컴포넌트에서 사용할 수 있는데 함수내에
+```js
+export async function getServerSideProps(){
+    return {
+        props: {
+            data
+        }
+    }
+}
+```
+위처럼 return문을 쓰면 된다.<br>
+이렇게 하면 Loading...을 표시해줄 필요도 없고, state를 쓸 필요도 없다.<br>
+프론트에서 렌더링될 때 데이터를 받는게 아니고 서버에서 미리 데이터를 받는 것이기 때문이다.
