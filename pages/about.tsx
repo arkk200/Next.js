@@ -1,3 +1,5 @@
 export default function ASDF() {
-    return "about us";
+    return <div>
+        <h1>About</h1>
+    </div>
 }
