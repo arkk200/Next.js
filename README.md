@@ -1,3 +1,4 @@
+### **노마드코더 강의사이트에 [NextJS 시작하기](https://nomadcoders.co/nextjs-fundamentals/lobby)에서 학습하고 있습니다.**
 # **1. 라이브러리 vs 프레임워크**
 
 **라이브러리(React.js 등)** 는 내가 직접 그 라이브러리를 불러와서 사용해야한다.
